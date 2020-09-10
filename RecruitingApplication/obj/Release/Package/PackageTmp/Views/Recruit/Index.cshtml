@@ -1,0 +1,96 @@
+﻿@model IEnumerable<Recruiting.Models.RecruitModels.RecruitListItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RecruitId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SchoolId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Position)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GraduationDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StarRating)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Strengths)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Weaknesses)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsOfferedScholarship)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RecruitId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SchoolId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Position)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GraduationDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StarRating)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Strengths)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Weaknesses)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsOfferedScholarship)
+        </td>
+        <td>
+            @Html.ActionLink("Update Recruit", "Edit", new { id= item.RecruitId}) |
+            @Html.ActionLink("Recruits Information", "Details", new { id= item.RecruitId }) |
+            @Html.ActionLink("Don't want him", "Delete", new { id=item.RecruitId })
+        </td>
+    </tr>
+}
+
+</table>
+<style>
+    table{
+
+        font-weight:bold;
+        font-family:'Bell MT';
+        color:aqua;
+            
+    }
+</style>
